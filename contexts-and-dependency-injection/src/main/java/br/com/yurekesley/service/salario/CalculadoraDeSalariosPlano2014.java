@@ -7,11 +7,11 @@ import javax.interceptor.Interceptor;
 import br.com.yurekesley.model.Funcionario;
 
 @Alternative
-@Priority(Interceptor.Priority.APPLICATION)
-public class CalculadoraDeSalariosPlano2013 implements CalculadoraDeSalarios {
- 
+@Priority(Interceptor.Priority.APPLICATION + 1)
+public class CalculadoraDeSalariosPlano2014 implements CalculadoraDeSalarios {
+
     public double calculaSalario(Funcionario funcionario) {
-	return 2013.0;
+	return 2014.0;
     }
 
 }

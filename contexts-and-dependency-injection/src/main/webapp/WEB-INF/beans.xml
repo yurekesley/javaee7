@@ -5,6 +5,8 @@
 	bean-discovery-mode="all" version="2.0">
 
 	<alternatives>
+		<!--
 		<class>br.com.yurekesley.service.salario.CalculadoraDeSalariosPlano2013</class>
+		-->
 	</alternatives>
 </beans>
