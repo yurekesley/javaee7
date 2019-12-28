@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.yurekesley.annotations.Calculadora;
 import br.com.yurekesley.service.salario.CalculadoraDeSalarios;
 
 @WebServlet("/calculadora-salarios")
@@ -16,7 +17,7 @@ public class CalculadoraDeSalariosServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    @Inject
+    @Inject 
     CalculadoraDeSalarios calculadoraDeSalarios;
 
     protected void doGet(HttpServletRequest req,
