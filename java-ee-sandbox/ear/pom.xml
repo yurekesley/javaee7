@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>yurekesley.com.br</groupId>
+		<artifactId>java-ee-sandbox</artifactId>
+		<version>1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>ear</artifactId>
+	<packaging>ear</packaging>
+
+	<name>EAR</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>yurekesley.com.br</groupId>
+			<artifactId>ejbs</artifactId>
+			<type>ejb</type>
+		</dependency>
+		<dependency>
+			<groupId>yurekesley.com.br</groupId>
+			<artifactId>servlet</artifactId>
+			<type>war</type>
+		</dependency>
+		<dependency>
+			<groupId>yurekesley.com.br</groupId>
+			<artifactId>primary-source</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>yurekesley.com.br</groupId>
+			<artifactId>logging</artifactId>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<artifactId>maven-ear-plugin</artifactId>
+				<configuration>
+					<ejbModule>
+						<groupId>yurekesley.com.br</groupId>
+						<artifactId>ejbs</artifactId>
+						<bundleFilename>my-ejb-lib.jar</bundleFilename>
+					</ejbModule>
+					<webModule>
+						<groupId>yurekesley.com.br</groupId>
+						<artifactId>servlets</artifactId>
+						<contextRoot>/my-servlet</contextRoot>
+					</webModule>
+					<archive>
+						<manifest>
+							<addClasspath>true</addClasspath>
+						</manifest>
+					</archive>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+</project>
