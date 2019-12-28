@@ -17,7 +17,7 @@ public class CalculadoraDeSalariosServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    @Inject 
+    @Inject @Calculadora
     CalculadoraDeSalarios calculadoraDeSalarios;
 
     protected void doGet(HttpServletRequest req,
