@@ -1,5 +1,7 @@
 package br.com.yurekesley.servlets;
 
+import static br.com.yurekesley.model.PlanoDeCargos.VERSAO_2013;
+
 import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
@@ -12,6 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import br.com.yurekesley.annotations.Simulador;
 import br.com.yurekesley.model.Folha;
 import br.com.yurekesley.model.Funcionario;
 import br.com.yurekesley.model.builder.FuncionarioBuilder;
@@ -22,17 +25,16 @@ public class CalcularFolhaPagamentoServlet extends HttpServlet {
 
     private static final long serialVersionUID = 1L;
 
-    @Inject
+    @Inject // @Default implicito// CalculadoraFolhaPagamentoReal
     private CalculadoraFolhaPagamento calculadoraFolha;
 
-    public CalcularFolhaPagamentoServlet() {
-	System.out.println("Instanciando a Servlet  CalcularFolhaPagamentoServlet...");
-    }
+    @Inject
+    @Simulador
+    private CalculadoraFolhaPagamento calculadoraFolha_implementacao_versao2005;
 
-    @PostConstruct
-    public void ok() {
-	System.out.println("CalcularFolhaPagamento pronta.");
-    }
+    @Inject
+    @Simulador(planoDeCargos = VERSAO_2013)
+    private CalculadoraFolhaPagamento calculadoraFolha_implementacao_versao2013;
 
     protected void doGet(HttpServletRequest req,
 	    HttpServletResponse res)
