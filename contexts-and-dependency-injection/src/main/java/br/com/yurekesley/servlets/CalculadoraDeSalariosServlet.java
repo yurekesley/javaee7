@@ -19,6 +19,9 @@ public class CalculadoraDeSalariosServlet extends HttpServlet {
 
     @Inject @Calculadora
     CalculadoraDeSalarios calculadoraDeSalarios;
+    
+    @Inject // pegando bean with Typed
+    CalculadoraDeSalarios calculadoraDeSalariosTyped;
 
     protected void doGet(HttpServletRequest req,
 	    HttpServletResponse res)
@@ -26,6 +29,9 @@ public class CalculadoraDeSalariosServlet extends HttpServlet {
 
 	res.getOutputStream()
 		.print("Calculadora: " + calculadoraDeSalarios.getClass());
+	
+	res.getOutputStream()
+	.print("Calculadora: " + calculadoraDeSalariosTyped.getClass());
     }
 
 }
