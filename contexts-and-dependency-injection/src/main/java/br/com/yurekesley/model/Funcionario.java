@@ -22,6 +22,7 @@ public @Data class Funcionario implements Serializable {
     private String nome;
     private Double salarioBase;
     private Escolaridade escolaridade;
+    private Boolean ativo;
 
     private Cargo cargo;
 
