@@ -6,9 +6,6 @@ import javax.inject.Inject;
 import br.com.yurekesley.model.Funcionario;
 // TODO remover o acoplamento da criacao do evento, usar delegante no GerenciadorFuncionarioBean
 public class GerenciadorFuncionarioBean {
-    
-    
-    
 
     @Inject
     @Contratacao
