@@ -24,6 +24,11 @@ public class FuncionarioBuilder {
 	return this;
     }
 
+    public FuncionarioBuilder comComEscolariadade(Escolaridade escolaridade) {
+	this.escolaridadeFuncionario = escolaridade;
+	return this;
+    }
+
     public Funcionario build() {
 
 	Cargo cargo = new Cargo(salarioBase, escolaridadeCargo);
