@@ -1,7 +1,0 @@
-Manifest-Version: 1.0
-Built-By: yure_
-Build-Jdk: 11.0.3
-Class-Path: ejbs-1.0-SNAPSHOT.jar primary-source-1.0-SNAPSHOT.jar loggin
- g-1.0-SNAPSHOT.jar
-Created-By: Maven Integration for Eclipse
-
